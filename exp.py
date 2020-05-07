@@ -1,25 +1,25 @@
-# import collections
-# import numpy as np
-# import tensorflow as tf
-# import tensorflow_federated as tff
+import collections
+import numpy as np
+import tensorflow as tf
+import tensorflow_federated as tff
 
 
-#tf.compat.v1.enable_v2_behavior()
-# np.random.seed(0)
-# k = tff.federated_computation(lambda: 'Hello, World!')()
-#
-# emnist_train, emnist_test = tff.simulation.datasets.emnist.load_data()
-#
-# example_dataset = emnist_train.create_tf_dataset_for_client(
-#     emnist_train.client_ids[0])
-#
-# example_element = next(iter(example_dataset))
-#
-# print(example_element['label'].numpy())
-# print(example_element['label'].numpy().shape)
-# print(example_element['pixels'].numpy().shape)
-#
-# print()
+tf.compat.v1.enable_v2_behavior()
+np.random.seed(0)
+k = tff.federated_computation(lambda: 'Hello, World!')()
+
+emnist_train, emnist_test = tff.simulation.datasets.emnist.load_data()
+
+example_dataset = emnist_train.create_tf_dataset_for_client(
+    emnist_train.client_ids[0])
+
+example_element = next(iter(example_dataset))
+
+print(example_element['label'].numpy())
+print(example_element['label'].numpy().shape)
+print(example_element['pixels'].numpy().shape)
+
+print()
 
 # <TensorSliceDataset shapes: {pixels: (28, 28), labels: ()}, types: {pixels: tf.uint8, labels: tf.uint8}>
 # {'pixels': TensorSpec(shape=(28, 28), dtype=tf.uint8, name=None), 'labels': TensorSpec(shape=(), dtype=tf.uint8, name=None)}
