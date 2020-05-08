@@ -1,17 +1,17 @@
 import numpy as np
 from tensorflow.keras.datasets import mnist
-from tensorflow.config import experimental
+from tensorflow import config
 from tensorflow.keras import optimizers, losses, metrics
 from matplotlib import pyplot as plt
 from pathlib import Path
 from models.conv_2 import create_keras_model
 from utils import plot_graph
 
-gpus = experimental.list_physical_devices('GPU')
+gpus = config.list_physical_devices('GPU')
 if gpus:
   try:
     for gpu in gpus:
-        experimental.set_memory_growth(gpu, True)
+        config.experimental.set_memory_growth(gpu, True)
   except RuntimeError as e:
     print(e)
 
