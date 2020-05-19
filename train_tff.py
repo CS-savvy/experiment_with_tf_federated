@@ -20,7 +20,6 @@ if gpus:
 
 experiment_name = "mnist"
 method = "tff_training"
-model_name = "conv_simple_tff.h5"
 client_lr = 1e-2
 server_lr = 1e-2
 split = 4
@@ -134,8 +133,13 @@ for round_num in range(1, NUM_ROUNDS+1):
     tff_train_loss.append(float(tff_metrics.loss))
     tff_val_loss.append(ev_result[0])
 
+metric_collection = {"sparse_categorical_accuracy": tff_train_acc,
+                     "val_sparse_categorical_accuracy": tff_val_acc,
+                     "loss": tff_train_loss,
+                     "val_loss": tff_val_loss}
+
 if eval_model:
-    eval_model.save(model_dir / model_name)
+    eval_model.save(model_dir / (experiment_name + ".h5"))
 else:
     print("training didn't started")
     exit()
@@ -154,3 +158,14 @@ plt.savefig(output_dir / "federated_model_loss.png")
 
 
 
+# saving metric values to text file
+
+txt_file_path = output_dir / (experiment_name + ".txt")
+with open(txt_file_path.as_posix(), "w") as handle:
+    content = []
+    for key, val in metric_collection.items():
+        line_content = key
+        val = [str(k) for k in val]
+        line_content = line_content + " " + " ".join(val)
+        content.append(line_content)
+    handle.write("\n".join(content))
