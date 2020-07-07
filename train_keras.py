@@ -19,7 +19,7 @@ if gpus:
 experiment_name = "mnist"
 method = "keras_training"
 batch_size = 20
-epochs = 2
+epochs = 25
 model_name = "conv_simple.h5"
 lr = 1e-2
 
