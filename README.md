@@ -12,7 +12,7 @@ This repository is having python scripts to compare the effectiveness of the mod
 
 Run `compare_results.py` to generate comparison graph for you metrics as it is saved in `results` folder in there respective sub-folders.
 
-#### sample plots
+##### sample plots
 
 Loss                       |  Accuracy
 :-------------------------:|:-------------------------:
