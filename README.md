@@ -10,4 +10,11 @@ This repository is having python scripts to compare the effectiveness of the mod
 
 #### Compare
 
-*Todo*  
+Run `compare_results.py` to generate comparison graph for you metrics as it is saved in `results` folder in there respective sub-folders.
+
+#### sample comparision plots
+
+Loss                       |  Accuracy
+:-------------------------:|:-------------------------:
+![loss](https://github.com/CS-savvy/experiment_with_tf_federated/blob/master/results/mnist/compare/loss.png?raw=true) | ![loss](https://github.com/CS-savvy/experiment_with_tf_federated/blob/master/results/mnist/compare/sparse_categorical_accuracy.png?raw=true)
+![loss](https://github.com/CS-savvy/experiment_with_tf_federated/blob/master/results/mnist/compare/val_loss.png?raw=true) |  ![loss](https://github.com/CS-savvy/experiment_with_tf_federated/blob/master/results/mnist/compare/val_sparse_categorical_accuracy.png?raw=true)
