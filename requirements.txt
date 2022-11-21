@@ -1,2 +1,2 @@
-tensorflow==2.1.0
+tensorflow==2.9.3
 tensorflow-federated==0.13.1
